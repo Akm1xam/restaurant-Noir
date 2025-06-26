@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noir - Элегантная кухня</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Noir</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="#promo">Акции</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop class="video-bg">
+            <source src="video/bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Искусство вкуса</h1>
+            <p>Откройте для себя новый уровень гастрономии</p>
+            <a href="#reservation" class="btn">Забронировать стол</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Наше меню</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="starters">Закуски</button>
+                <button class="category-btn" data-category="mains">Основные блюда</button>
+                <button class="category-btn" data-category="desserts">Десерты</button>
+                <button class="category-btn" data-category="drinks">Напитки</button>
+            </div>
+            <div class="menu-items">
+                <!-- Здесь будут динамически загружаться элементы меню -->
+            </div>
+        </div>
+    </section>
+
+    <section id="promo" class="promo-section">
+        <div class="container">
+            <h2 class="section-title">Специальные предложения</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="promo-card">
+                            <h3>Дегустационный сет</h3>
+                            <p>5 авторских блюд от шефа со скидкой 20%</p>
+                            <span class="promo-price">4 900 ₽</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="promo-card">
+                            <h3>Вино дня</h3>
+                            <p>Отборные вина по специальной цене</p>
+                            <span class="promo-price">1 500 ₽</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="promo-card">
+                            <h3>Бизнес-ланч</h3>
+                            <p>С 12:00 до 16:00 в будние дни</p>
+                            <span class="promo-price">1 200 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Noir</div>
+                <div class="footer-info">
+                    <p>Москва, ул. Тверская, 12</p>
+                    <p>Ежедневно с 12:00 до 23:00</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="icon-instagram"></i></a>
+                    <a href="#"><i class="icon-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
