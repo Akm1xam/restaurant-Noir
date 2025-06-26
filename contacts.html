@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noir - Контакты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Noir</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#menu">Меню</a></li>
+                    <li><a href="index.html#promo">Акции</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="contacts-hero">
+        <div class="container">
+            <h1>Наши контакты</h1>
+        </div>
+    </section>
+
+    <section class="contacts-section">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <h2>Посетите нас</h2>
+                    <p class="contact-item"><i class="icon-location"></i> Москва, ул. Тверская, 12</p>
+                    <p class="contact-item"><i class="icon-clock"></i> Ежедневно с 12:00 до 23:00</p>
+                    <p class="contact-item"><i class="icon-phone"></i> +7 (495) 123-45-67</p>
+                    <p class="contact-item"><i class="icon-email"></i> reserve@noir.ru</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contacts-map">
+                    <div id="map"></div>
+                    <div class="map-tooltip">
+                        <h3>Noir Restaurant</h3>
+                        <p>ул. Тверская, 12</p>
+                        <p>12:00 - 23:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+        <div class="container">
+            <h2 class="section-title">Обратная связь</h2>
+            <form class="feedback-form">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Ваше имя</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone">
+                    <label for="phone">Телефон (необязательно)</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">Ваше сообщение</label>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Noir</div>
+                <div class="footer-info">
+                    <p>Москва, ул. Тверская, 12</p>
+                    <p>Ежедневно с 12:00 до 23:00</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="icon-instagram"></i></a>
+                    <a href="#"><i class="icon-facebook"></i></a>
+                    <a href="#"><i class="icon-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=2b557bca-2b79-4beb-a8fa-e571538c4f5f&lang=ru_RU"></script>
+<script src="js/main.js"></script>
+<script>
+    // Инициализация Яндекс.Карты
+    document.addEventListener('DOMContentLoaded', function() {
+        ymaps.ready(initYandexMap);
+    });
+
+    function initYandexMap() {
+        const map = new ymaps.Map('map', {
+            center: [55.7586, 37.6106], // Координаты ресторана
+            zoom: 15,
+            controls: ['zoomControl']
+        });
+
+        // Создание метки
+        const placemark = new ymaps.Placemark([55.7586, 37.6106], {
+            hintContent: 'Noir Restaurant',
+            balloonContent: 'ул. Тверская, 12<br>Ежедневно с 12:00 до 23:00'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'images/map-marker.png', // Ваш маркер
+            iconImageSize: [40, 40],
+            iconImageOffset: [-20, -40]
+        });
+
+        map.geoObjects.add(placemark);
+    }
+</script>
+</body>
+</html>
